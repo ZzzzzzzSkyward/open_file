@@ -30,7 +30,7 @@
             for(let i=0;i<=len[page];i++){
                 text+="<img class='comic' src='"+page+"/"+formatit(i)+".jpg"+"' loading='lazy' />";
             }
-            parent.innerHTML+=text;
+            parent.innerHTML+="<a href='https://zzzzzzzskyward.github.io/open_file/zrqk/?pn="+(page>1?(page-1):1).toString()+"'>上一页</a>..........<a href='https://zzzzzzzskyward.github.io/open_file/zrqk/?pn="+(page>14?page:(page+1))+"'>下一页</a><br/>"+text;
         }
     </script>
 </head>
