@@ -24,13 +24,13 @@
                 document.body.innerHTML+="<p>一共1-29页，请输入正确页数</p>";
                 return;
             }
-            var len=[10,6,6,6,9,9,7,7,9,14,11,10,6,6,10,4,4,4,5,4,4,3,4,6,3,4,10,10,16];
+            var len=[0,10,6,6,6,9,9,7,7,9,14,11,10,6,6,10,4,4,4,5,4,4,3,4,6,3,4,10,10,16];
             var parent=document.body;
             var text="";
             for(let i=0;i<len[page];i++){
                 text+="<img class='comic' src='./"+page+"/"+formatit(i)+".jpg"+"' loading='lazy' />";
             }
-            parent.innerHTML+=text;
+            parent.innerHTML+="<a href='https://zzzzzzzskyward.github.io/open_file/ykln/?pn='"+page?(page-1):0+"'>上</a><a href='https://zzzzzzzskyward.github.io/open_file/ykln/?pn="+(page>28?page:(page+1))+"'>下一页</a><br/>"+text;
         }
     </script>
 </head>
@@ -45,7 +45,7 @@
         border: 0;
     }
 </style>
-<p id="hidden">昨日青空的漫画（来自转载的转载快看漫画的网站），请修改网址阅读，一共是1-29页，网址为https://zzzzzzzskyward.github.io/ykln/?pn=1</p>
+<p id="hidden">昨日青空：印刻流年的漫画（来自口袋巧克力的微信公众号），请修改网址阅读，一共是1-29页，网址为<a href="https://zzzzzzzskyward.github.io/open_file/ykln/?pn=1">https://zzzzzzzskyward.github.io/open_file/ykln/?pn=1</a></p>
 <script src="../../main/zzz.js"></script>
 <script>
     init();
