@@ -152,3 +152,15 @@ PART 4 SPECIFIC
 .title:hover{
     color:rgb(240,130,130)
 }
+p{
+    margin:0;
+    line-height:1em;
+    }
+.quote{
+    border-width:0;
+    font-family:'Times New Roman',楷体,'Kai Ti',仿宋;
+    border-left-width:0.3em;
+    padding-left:0.5em;
+    border-style:solid;
+    border-color:gray;
+}
