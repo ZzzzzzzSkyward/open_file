@@ -31,9 +31,12 @@
     （前情已在上文中叙述）妹妹向哥哥透露了一个秘密——她遭遇了表哥的性骚扰。
     `;
         var paragraph=text.split("\n");
-        for(let i of paragraph){
-            zzz.create("p",{innerText:i.replace("[","[<a href='").replace("]",".html'></a>")},{},zzz.get.id("main"));
-        }
+        setTimeout(function() {
+            for (let i of paragraph) {
+                let pid=i.match(/[0-9]{5,}/);
+                zzz.create("p", {innerHTML: i.replace("[", "[<a href='").replace("]", ".html'>"+pid+"</a>]")}, {}, zzz.get.id("main"));
+            }
+        },100);
     </script>
 </div>
 </body>

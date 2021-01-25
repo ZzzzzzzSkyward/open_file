@@ -3028,14 +3028,22 @@ zzz.init=function () {
     zzz.api.update.url["zzz"]=["https://ZzzzzzzSkyward.github.io/main/update.js"];
     zzz.api.update.current["zzz"]=zzz.version;
     zzz.inited=true;
-    zzz.fetch.css('zss.css');
-    for (let i of document.images){
-        i.loading='lazy';
-        i.alt=zzz.get.attr(i,'emoji')?('emoji'+zzz.get.attr(i,'emoji')):(zzz.get.attr(i,'face')?('face'+zzz.get.attr(i,'face')):i.src);
-        if(i.getAttribute('emoji')){i.src='emoji/'+i.getAttribute('emoji')}
-        else if(i.getAttribute('face')){i.src='face/'+i.getAttribute('face')}
+    try {
+        zzz.fetch.css('zss.css');
+        for (let i of document.images) {
+            i.loading = 'lazy';
+            i.alt = zzz.get.attr(i, 'emoji') ? ('emoji' + zzz.get.attr(i, 'emoji')) : (zzz.get.attr(i, 'face') ? ('face' + zzz.get.attr(i, 'face')) : i.src);
+            if (i.getAttribute('emoji')) {
+                i.src = 'emoji/' + i.getAttribute('emoji')
+            } else if (i.getAttribute('face')) {
+                i.src = 'face/' + i.getAttribute('face')
+            }
+        }
+        var ee = zzz.get.cls('title')[0];
+        zzz.incidence.bind(ee, 'click', function () {
+            zzz.browser.open("https://tieba.baidu.com/p/" + zzz.get.attr(ee, 'pid'))
+        });
     }
-    var ee=zzz.get.cls('title')[0];
-    zzz.incidence.bind(ee,'click',function(){zzz.browser.open("https://tieba.baidu.com/p/"+zzz.get.attr(ee,'pid'))});
+    catch(e){}
 };
 zzz.init();
