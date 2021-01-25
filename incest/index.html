@@ -13,8 +13,13 @@
     <textarea id="hidden_cb"></textarea>
 </div>
 <div id="main">
-    <pre>
-    【案例十二】比五代血亲的哥哥小两岁的妹妹害怕哥哥把自己当成家人而非恋人[5562942226]
+</div>
+<div id="introduction"class="smooth standard_font"></div>
+<div id="scripts">
+    <link rel="stylesheet" type="text/css" href="zss.css">
+    <script language="javascript" src="zzz.js" type="text/javascript"></script>
+    <script>
+        var text=`【案例十二】比五代血亲的哥哥小两岁的妹妹害怕哥哥把自己当成家人而非恋人[5562942226]
     【案例十三】喜爱舅舅家一抹多（日文，翻译成“妹妹”；对应的“欧尼酱”是“哥哥”的意思）的哥哥[5799820184]
     【案例十四】2016年，楼主哥哥与刚成年的妹妹小韵在一起了。前几年，哥哥发现小韵自残，小韵于是休学，并诊断出中度抑郁。某天小韵离家出走，去了江南，一度想落水，却念及亲情，洗心革面。哥哥陪小韵参加了一个旨在增进友谊的夏令营，收获颇丰；由于小韵与夏令营的伙伴互相有好感，哥哥吃醋后冲动之下亲了小韵。[6008600754]
     【案例十五】楼主小学时认了一个义妹。妹妹与楼主是幼儿园同学，想要认一个哥哥。两人虽然只有亲情，但义妹家长却反对她与男生谈恋爱。楼主看了《缘之空》后感到不适，但义妹却轻视道德。两人都有了暗恋对象，但哥哥却发现自己爱上了义妹。[6187040784]
@@ -24,13 +29,11 @@
     【案例十七】和一抹多（实妹）在一起快两年啦[6247904095]
     【案例十】到底……怎么样才是真的对妹妹好呢？[6280965487]
     （前情已在上文中叙述）妹妹向哥哥透露了一个秘密——她遭遇了表哥的性骚扰。
-    </pre>
-</div>
-<div id="introduction"class="smooth standard_font"></div>
-<div id="scripts">
-    <link rel="stylesheet" type="text/css" href="zss.css">
-    <script language="javascript" src="zzz.js" type="text/javascript"></script>
-    <script>
+    `;
+        var paragraph=text.split("\n");
+        for(let i of paragraph){
+            zzz.create("p",{innerText:i.replace("[","[<a href='").replace("]",".html'></a>")},{},zzz.get.id("main"));
+        }
     </script>
 </div>
 </body>
