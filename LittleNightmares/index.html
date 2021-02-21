@@ -1,1 +1,33 @@
-<html><body><audio src="unused main theme II.flac" controls></audio></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="content-type" content="zh-Ch">
+    <meta name="author" content="zzzzzzzs">
+    <title>The Little Nightmares</title>
+</head>
+<body>
+<div id="preload" class="hidden"></div>
+<div id="backplay" class="hidden"></div>
+<div id="elsewhere" class="hidden">
+</div>
+<div id="main"></div>
+<div id="introduction"class="smooth standard_font"></div>
+<div id="scripts">
+    <script language="javascript" src="https://zzzzzzzskyward.github.io/main/zzz.js" type="text/javascript"></script>
+    <script>
+	    var url="https://zzzzzzzskyward.github.io/main/"
+        zzz.fetch.js(url+"zdata.js");
+        var makeAudio=function(src){
+		return "<audio src='"+src+"' controls></audio>"
+		}
+		zzz.get.id("main").innerHTML=`
+		没有使用的主题曲：
+		`+makeAudio("unused main theme II.flac")+`
+		没有使用的End of the Hall：
+		`+makeAudio("unused end of the hall.flac")+`
+		`
+    </script>
+</div>
+</body>
+</html>
