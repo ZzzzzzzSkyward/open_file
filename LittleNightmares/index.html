@@ -18,8 +18,8 @@
     <script>
 	    var url="https://zzzzzzzskyward.github.io/main/"
         zzz.fetch.js(url+"zdata.js");
-        var makeAudio=function(src){
-		return "<audio src='"+src+"' controls></audio>"
+        var makeAudio=function(src,isLoop){
+		return "<audio src='"+src+"' controls "+isLoop?"loop":""+"></audio>"
 		}
 		zzz.get.id("main").innerHTML=`
 		没有使用的主题曲：
@@ -29,7 +29,7 @@
 		<br/>没有使用的Hypno：
 		`+makeAudio("Hypno.flac")+`
 		<br/>小六的八音盒：
-		`+makeAudio("424365629 Mus_Friendship_Cabin.flac")
+		`+makeAudio("424365629 Mus_Friendship_Cabin.flac",true)
 		
     </script>
 </div>
