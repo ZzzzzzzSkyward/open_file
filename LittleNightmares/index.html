@@ -63,7 +63,7 @@ p:hover{
 		}
 		zzz.get.id("main").innerHTML="<audio src='' controls id='player' loop></audio>";
 		for(let i in music){
-			zzz.get.id("main").innerHTML+="<p onclick='changeSong('"+i+"');'>"+i+"</p>";
+			zzz.get.id("main").innerHTML+=`<p onclick='changeSong("`+i+`");'>`+i+`</p>`;
 		}
 	};
 	init();
