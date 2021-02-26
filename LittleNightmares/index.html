@@ -18,13 +18,21 @@ display:block;
 align:center;
 }
 p{
-font-size:30px;
-text-align:center;
-align:center;
-width:60%;
-line-height:1em;
-margin:10px;
-box-shadow: black 0px 0px 5px 5px;
+	font-size: 30px;
+	text-align: center;
+	align-content: center;
+	width: 60%;
+	line-height: 1em;
+	margin: 13px;
+	box-shadow: black 0px 0px 7px 0px;
+	align-self: center;
+	align-items: center;
+	position: relative;
+	padding: 10px;
+	background-color:rgb(255,255,255)
+}
+p:hover{
+	background-color:rgb(190,100,100)
 }
 </style>
 <div id="scripts">
@@ -55,7 +63,7 @@ box-shadow: black 0px 0px 5px 5px;
 		}
 		zzz.get.id("main").innerHTML="<audio src='' controls id='player' loop></audio>";
 		for(let i in music){
-			zzz.get.id("main").innerHTML+="<p onclick='changeSong("+i+");'>"+i+"</p>";
+			zzz.get.id("main").innerHTML+="<p onclick='changeSong('"+i+"');'>"+i+"</p>";
 		}
 	};
 	init();
