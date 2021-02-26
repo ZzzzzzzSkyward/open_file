@@ -43,6 +43,8 @@ box-shadow: black 0px 0px 5px 5px;
 		zzz.get.id("player").src=music[currentMusic];
 		zzz.get.id("player").play();
 	};
+	var url="https://zzzzzzzskyward.github.io/main/"
+	zzz.fetch.js(url+"zdata.js");
 	var init=function(){
 		try{
 			zzz.get.id();
@@ -51,13 +53,12 @@ box-shadow: black 0px 0px 5px 5px;
 			setTimeout(init,1000);
 			return;
 		}
-	    var url="https://zzzzzzzskyward.github.io/main/"
-        zzz.fetch.js(url+"zdata.js");
 		zzz.get.id("main").innerHTML="<audio src='' controls id='player' loop></audio>";
 		for(let i in music){
 			zzz.get.id("main").innerHTML+="<p onclick='changeSong("+i+");'>"+i+"</p>";
 		}
 	};
+	init();
     </script>
 </div>
 </body>
