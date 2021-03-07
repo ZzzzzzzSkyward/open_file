@@ -81,7 +81,7 @@
                 setTimeout(init,1000);
                 return;
             }
-            zzz.get.id("main").innerHTML="<audio src='' controls id='player' loop onplay='playing();' onpause='pausing();'></audio>";
+            zzz.get.id("main").innerHTML+="<audio src='' controls id='player' loop onplay='playing();' onpause='pausing();'></audio>";
             for(let i in music){
                 zzz.get.id("main").innerHTML+=`<p onclick='changeSong("`+i+`");'>`+i+`</p>`;
             }
