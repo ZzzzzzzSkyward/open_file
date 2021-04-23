@@ -2,13 +2,9 @@
 <head>
     <title>昨日青空：印刻流年</title>
     <script>
-        var init=function () {
-            if(!window.zzz){
-                setTimeout(init,1000);
-                return;
-            }
-            window.zzz.fetch.js("../../main/zdata.js");
-            setTimeout(init_next,1000);
+        document.zzzinit=function () {
+            zzz.fetch.js("../../main/zdata.js");
+            setTimeout(init_next,10);
         };
         var formatit=function (i) {
             i=i.toString();
@@ -18,7 +14,7 @@
         };
         var init_next=function () {
             var page=zzz.path.split(zzz.browser.uri).component.pn;
-            var len=[10,6,6,6,9,9,7,7,9,14,11,10,6,6,10,4,4,4,5,4,4,3,4,6,3,4,10,10,16,15,19];
+            var len=[10,6,6,6,9,9,7,7,9,14,11,10,6,6,10,4,4,4,5,4,4,3,4,6,3,4,10,10,16,15,19,8];
             var max_page=len.length;
             if(!page) page=1;
             else page=zzz.toNum(page);
@@ -46,10 +42,8 @@
         border: 0;
     }
 </style>
-<p id="hidden">昨日青空：印刻流年的漫画（来自口袋巧克力的微信公众号），请修改网址阅读，一共是1-31页，网址为<a href="https://zzzzzzzskyward.github.io/open_file/ykln/?pn=1">https://zzzzzzzskyward.github.io/open_file/ykln/?pn=1</a></p>
+<p id="hidden">昨日青空：印刻流年的漫画（来自口袋巧克力的微信公众号），请修改网址阅读，网址为<a href="https://zzzzzzzskyward.github.io/open_file/ykln/?pn=1">https://zzzzzzzskyward.github.io/open_file/ykln/?pn=1</a></p>
 <script src="../../main/zzz.js"></script>
-<script>
-    init();
-</script>
+<script src="../main/zdata.js"></script>
 </body>
 </html>
