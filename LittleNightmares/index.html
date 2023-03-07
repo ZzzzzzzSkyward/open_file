@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="content-type" content="zh-Ch">
+    <title>Music of The Little Nightmares</title>
+</head>
+<style>@keyframes circle{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}
+</style>
+<body>
+<div id="main">
+    <div id="panel" style="width: 400px;height: 400px;background: url(cover.png);background-size:contain;display: flex;justify-content: center;align-items: center;clip-path: circle(40%);animation: circle backwards 30s infinite linear paused;">
+        <div style="clip-path: circle(11%);width: inherit;height: inherit;background: white;"></div>
+    </div>
+</div>
+<style>
+    body{
+        margin:0;
+        padding:0;
+        display: flex;
+        justify-content: center;
+    }
+    audio{
+        position:relative;
+        display:block;
+        align:center;
+    }
+    #main{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    p{
+        font-size: 30px;
+        text-align: center;
+        align-content: center;
+        width: 60%;
+        line-height: 1em;
+        margin: 13px;
+        box-shadow: black 0px 0px 7px 0px;
+        align-self: center;
+        align-items: center;
+        position: relative;
+        padding: 10px;
+        background-color:rgb(255,255,255)
+    }
+    p:hover{
+        background-color:rgb(190,100,100)
+    }
+</style>
+<div id="scripts">
+    <script language="javascript" src="https://zzzzzzzskyward.github.io/main/zzz.js" type="text/javascript"></script>
+    <script>
+        var music={
+            '没有使用的主题曲':"unused main theme II.flac",
+            '没有使用的End of the Hall':"unused end of the hall.flac",
+            '没有使用的Hypno':"Hypno.flac",
+            '小六的八音盒':"424365629 Mus_Friendship_Cabin.flac",
+            '夫人的八音盒':"Lady's MusicBox Lounge Close.flac",
+            '下水道里的八音盒':"SewerToys Musicbox Clean.flac"
+        };
+        var changeSong=function(currentMusic){
+            if(!currentMusic) return;
+            zzz.get.id("player").src=music[currentMusic];
+            zzz.get.id("player").play();
+        };
+        var url="https://zzzzzzzskyward.github.io/main/";
+        zzz.fetch.js(url+"zdata.js");
+        function playing() {
+            zzz.get.id("panel").style.animationPlayState="running";
+        }
+        function pausing() {
+            zzz.get.id("panel").style.animationPlayState="paused";
+        }
+        var init=function(){
+            try{
+                zzz.get.id();
+            }
+            catch(e){
+                setTimeout(init,1000);
+                return;
+            }
+            zzz.get.id("main").innerHTML+="<audio src='' controls id='player' loop onplay='playing();' onpause='pausing();'></audio>";
+            for(let i in music){
+                zzz.get.id("main").innerHTML+=`<p onclick='changeSong("`+i+`");'>`+i+`</p>`;
+            }
+        };
+        init();
+    </script>
+</div>
+</body>
+</html>

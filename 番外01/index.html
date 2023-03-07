@@ -1,0 +1,41 @@
+<html>
+<head>
+    <title>昨日青空：番外01</title>
+    <script>
+        document.zzzloaded=function () {
+            zzz.fetch.js("../../main/zdata.js");
+            setTimeout(init_next,100);
+        };
+        var formatit=function (i) {
+            i=i.toString();
+            var text="";
+            for(let j=i.length;j<4;j++) text+="0";
+            return text+i;
+        };
+        var init_next=function () {
+            var len=12;
+            var parent=document.body;
+            var text="";
+            for(let i=1;i<=len;i++){
+                text+="<img class='comic' src='./"+formatit(i)+".jpg"+"' loading='lazy' />";
+            }
+            parent.innerHTML+=text;
+        }
+    </script>
+</head>
+<body>
+<style>
+    .comic{
+        display: block;
+        width:100%;
+        position: relative;
+        margin: 0;
+        padding: 0;
+        border: 0;
+    }
+</style>
+<p id="hidden">番外01（来自B站漫画），网址为<a href="https://zzzzzzzskyward.github.io/open_file/番外01/">https://zzzzzzzskyward.github.io/open_file/番外01/</a></p>
+<script src="../../main/zzz.js"></script>
+<script src="../../main/zdata.js"></script>
+</body>
+</html>

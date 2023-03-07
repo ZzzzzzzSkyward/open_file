@@ -1,0 +1,51 @@
+<html>
+<head>
+    <title>昨日青空：印刻流年</title>
+    <script>
+        document.zzzloaded=function () {
+            zzz.fetch.js("../../main/zdata.js");
+            setTimeout(init_next,10);
+        };
+        var formatit=function (i) {
+            i=i.toString();
+            var text="";
+            for(let j=i.length;j<2;j++) text+="0";
+            return text+i;
+        };
+        var init_next=function () {
+            var page=zzz.path.split(zzz.browser.uri).component.pn;
+            if(!page) page="1";
+            else page=zzz.toNum(page);
+            //len is the length of pictures
+            var len=[10,6,6,6,9,9,7,7,9,14,11,10,6,6,10,4,4,4,5,4,4,3,4,6,3,4,10,10,16,15,19,8,11,15,10,12,15,16];
+            var parent=document.body;
+            if(page<1||page>len.length){
+                parent.innerHTML+="<p>一共1-"+len.length+"页，请输入正确页数</p>";
+                return;
+            }
+            var text="";
+            for(let i=0;i<len[page-1];i++){
+                text+="<img class='comic' src='./"+page+"/"+formatit(i)+".jpg"+"' loading='lazy' />";
+            }
+            parent.innerHTML+="<a href='https://zzzzzzzskyward.github.io/open_file/ykln/?pn="+(page>1?(page-1):1).toString()+"'>上一页</a>..........<a href='https://zzzzzzzskyward.github.io/open_file/ykln/?pn="+(page>(len.length-1)?page:(page+1))+"'>下一页</a><br/>";
+            parent.innerHTML+=text;
+            parent.innerHTML+="<a href='https://zzzzzzzskyward.github.io/open_file/ykln/?pn="+(page>1?(page-1):1).toString()+"'>上一页</a>..........<a href='https://zzzzzzzskyward.github.io/open_file/ykln/?pn="+(page>(len.length-1)?page:(page+1))+"'>下一页</a><br/>";
+        }
+    </script>
+</head>
+<body>
+<style>
+    .comic{
+        display: block;
+        width:100%;
+        position: relative;
+        margin: 0;
+        padding: 0;
+        border: 0;
+    }
+</style>
+<p id="hidden">《昨日青空：印刻流年》（来自口袋巧克力的微信公众号），请修改网址阅读，网址为<a href="https://zzzzzzzskyward.github.io/open_file/ykln/?pn=1">https://zzzzzzzskyward.github.io/open_file/ykln/?pn=1</a></p>
+<script src="../../main/zzz.js"></script>
+<script src="../../main/zdata.js"></script>
+</body>
+</html>
