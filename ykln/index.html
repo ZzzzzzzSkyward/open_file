@@ -14,10 +14,10 @@
         };
         var init_next=function () {
             var page=zzz.path.split(zzz.browser.uri).component.pn;
-            if(!page) page="1";
+            if(!page) page=1;
             else page=zzz.toNum(page);
             //len is the length of pictures
-            var len=[10,6,6,6,9,9,7,7,9,14,11,10,6,6,10,4,4,4,5,4,4,3,4,6,3,4,10,10,16,15,19,8,11,15,10,12,15,16];
+            var len=[10,6,6,6,9,9,7,7,9,14,11,10,6,6,10,4,4,4,5,4,4,3,4,6,3,4,10,10,16,15,19,8,11,15,10,12,15,16,11,13,10,18];
             var parent=document.body;
             if(page<1||page>len.length){
                 parent.innerHTML+="<p>一共1-"+len.length+"页，请输入正确页数</p>";
